@@ -1,6 +1,6 @@
 from clients.http import get_json, NotFound, AppError
 
-CODES = CODES = {
+CODES = {
     0: "ясно", 
     1: "преимущественно ясно", 
     2: "переменная облачность", 

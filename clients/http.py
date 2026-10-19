@@ -22,7 +22,7 @@ def get_json(url, params=None):
         res = session.get(url, params=params, timeout=10)
     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
         raise AppError(str(e)) from e
-    if res.status_code in [404, 429]:
+    if res.status_code == 404:
         raise NotFound(res.status_code)
     if not res.ok:
         raise AppError(res.status_code)
